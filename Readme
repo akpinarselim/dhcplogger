@@ -1,1 +1,82 @@
-Hazırlanıyor...
+Bu programı yazmamdaki amaç sürümden bağımsız bir loglama programı oluşturmak.
+-----dhcpd.leases dosyası aynı formatta olduğu sürece sorunsuz çalışacaktır. 
+
+dhcpd.leases örneği;
+
+lease 192.168.1.38 {
+  starts 2 2013/12/17 13:50:17;
+  ends 2 2013/12/17 15:50:17;
+  tstp 2 2013/12/17 15:50:17;
+  cltt 2 2013/12/17 13:50:17;
+  binding state free;
+  hardware ethernet b8:70:f4:5e:72:12;
+  uid "\001\270p\364^r\022";
+}
+lease 192.168.1.42 {
+  starts 2 2013/12/17 21:31:03;
+  ends 2 2013/12/17 23:31:03;
+  ... şeklinde devam ediyor.
+
+---KURULUM---
+
+1-)Öncelikle pfsense kurulu makineye filezilla programı ile bağlanıyoruz
+1a-)Filezilla programının "Dosya" sekmesinden "Site Yöneticisi" seçeneğine tıklıyoruz.
+1b-)"Yeni Site" Düğmesine tıklayıp aşağıdaki ayarları yapıyoruz:
+Sunucu: pfSense makinesinin ip adresi
+Port: 22
+İletişim Kuralı : SFTP
+Giriş Türü: Normal
+Kullanıcı: root
+Şifre: Web arayüzünde kullandığınız admin şifresi
+ve bağlan diyoruz.
+
+2-)İndirmiş olduğunuz dosyayı filezilla programı ile /sbin klasörünün içine atıyoruz.
+
+3-)İlk ayarları yapmak için pfSense makinemize SSH ile bağlanmamız gerekiyor.
+3a-)pfSense makinemize bağlanmak için Putty programını kullanacağız.
+3b-)"Host Name" bölümüne pfSense makinemizin ip adresini giriyoruz ve "open" diyoruz.
+Login as: root
+Password: Web arayüzü admin şifreniz
+3c-)8 seçeneğini seçip konsolu açıyoruz ve komutumuzu giriyoruz:
+
+python /sbin/dhcplogger.py
+
+4-)Daha önceden bir ayar oluşturulmadığı için ilk ayarları girmemiz isteniyor:
+Ip: pfSense makinesinin ip adresi
+Klasör: Hedef makinedeki paylaşılan klasörün adı
+Kullanıcı: Hedef makinedeki kullanıcı adı
+Şifre: Kullanıcının şifresi
+ve ayarları kaydetmek için "e" diyoruz.
+(Sonradan ayarları değiştirmek isterseniz:"python /sbin/dhcplogger.py -d" şeklinde yazmanız yeterli)
+
+5-)Windows tarafı ve dosya paylaşımı
+5a-)Windows bilgisayarımızda c: sürücümüze bir klasör oluşturup bunu paylaşıma açıyoruz.
+Önemli Nokta: Paylaşıma açtığınız klasöre eklediğiniz kullanıcı ile yukarıda ayarlara yazdığınız değerler aynı olmalıdır.
+
+---PFSENSE MAKİNEYE SMBCLİENT KURULUMU---
+################################################
+---Eğer pfSense makinenizde samba 3.6 sürümü yüklü ise program sorunsuz çalışacaktır.
+---1. Adımda bahsedilen işlemleri yapmadan önce 2. işlemi yapmayı deneyin eğer hata alırsanız aşağıdan devam edin. 
+################################################
+1-)Öncelikle pfSense makinenizde aşağıdaki paketler var ise öncelikle pkg_delete kurulu-programın-adı komutu ile kaldırınız.
+---python 
+---samba
+-----bu dosyaları kaldırırken "talloc, tevent vb." paketleride kaldırmanız gerekebilir. 
+
+2-)Ardından:
+
+pkg_add -r http://ftp.freebsd.org/pub/FreeBSD/ports/packages/Latest/samba36-smbclient.tbz 
+
+komutu ile samba kurulumunu gerçekleştiriyoruz.
+-----Samba kurulurken sildiğiniz bütün paketleri geri yükleyecektir.
+-----Daha önceki sürümü kaldırmamızın 2 nedeni var:
+1-)Samba sürümü 3.5.x üzeri olması gerektiği için 
+2-)Eğer direk samba kurulumuna geçerseniz python sürümü ile ilgili sorun yaşayabilirsiniz. 
+
+---Cron Oluşturmak---
+1-)Program günlük olarak kayıt tutmak için yazıldı benim tavsiyem saat gece 12'de programı aktif etmeniz.
+KOMUT: 
+
+python /sbin/dhcplogger.py
+################################################
+PROGRAMI DENEYİP BANA GERİ DÖNÜŞ YAPMANIZ BENİM İÇİN ÇOK ÖNEMLİ LÜTFEN OLUMLU YADA OLUMSUZ MESAJLARINIZI ESİRGEMEYİM.
