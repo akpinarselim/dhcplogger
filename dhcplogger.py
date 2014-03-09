@@ -141,7 +141,7 @@ deger=config_zero.split(":")
 print "#########################################################################- O X#"
 print "#                                  Selim Akpinar                              #"
 print "#                              pfSense log kaydedici                          #"
-print "#                                    Surum 0.3                              #"
+print "#                                    Surum 0.2                                #"
 print "#-----------------------------------------------------------------------------#"
 print "#Varsayilan degerler:                                                         #"
 print "#---                                                                          #"
