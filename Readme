@@ -1,3 +1,12 @@
+Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
+
+V 0.2:
+---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritmayı değiştirdim.
+---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
+---Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili bir problem giderildi.
+
+#################################################################################
+
 Bu programı yazmamdaki amaç sürümden bağımsız bir loglama programı oluşturmak.
 -----dhcpd.leases dosyası aynı formatta olduğu sürece sorunsuz çalışacaktır. 
 
@@ -33,6 +42,7 @@ Kullanıcı: root
 ve bağlan diyoruz.
 
 2-)İndirmiş olduğunuz dosyayı filezilla programı ile /sbin klasörünün içine atıyoruz.
+2a-)Yeni sürüm dosyaları /var/log/dhcplogger klasörüne kaydediyor. Sorun olmaması için /log klasörünün altına /dhcplogger adlı bir klasör oluşturun.
 
 3-)İlk ayarları yapmak için pfSense makinemize SSH ile bağlanmamız gerekiyor.
 3a-)pfSense makinemize bağlanmak için Putty programını kullanacağız.
