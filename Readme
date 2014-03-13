@@ -16,6 +16,8 @@ lease 192.168.1.42 {
   starts 2 2013/12/17 21:31:03;
   ends 2 2013/12/17 23:31:03;
   ... şeklinde devam ediyor.
+  
+-İndirmek için: https://www.dropbox.com/s/i5chioivb1lm9sy/dhcplogger.py
 
 ---KURULUM---
 
@@ -46,6 +48,7 @@ Ip: pfSense makinesinin ip adresi
 Klasör: Hedef makinedeki paylaşılan klasörün adı
 Kullanıcı: Hedef makinedeki kullanıcı adı
 Şifre: Kullanıcının şifresi
+Saat: Kaç saatte bir kayıt yenilemesini istiyorsanız.
 ve ayarları kaydetmek için "e" diyoruz.
 (Sonradan ayarları değiştirmek isterseniz:"python /sbin/dhcplogger.py -d" şeklinde yazmanız yeterli)
 
@@ -74,7 +77,9 @@ komutu ile samba kurulumunu gerçekleştiriyoruz.
 2-)Eğer direk samba kurulumuna geçerseniz python sürümü ile ilgili sorun yaşayabilirsiniz. 
 
 ---Cron Oluşturmak---
-1-)Program günlük olarak kayıt tutmak için yazıldı benim tavsiyem saat gece 12'de programı aktif etmeniz.
+1-)Programı ayarlarken seçtiğiniz saat aralığını crona giriniz:
+- * */5 * * * KOMUT
+- Yukarıda girdiğim 5 değeri sizin programı kurarken girdiğiniz saat değeriyle aynı olmalı.
 KOMUT: 
 
 python /sbin/dhcplogger.py
