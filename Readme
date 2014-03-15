@@ -3,7 +3,8 @@ Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
 V 0.2:
 ---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritma değiştirildi.
 ---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
----Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili bir problem giderildi.
+---Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili 
+bir problem giderildi.
 
 #################################################################################
 
