@@ -3,8 +3,7 @@ Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
 V 0.2:
 ---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritma değiştirildi.
 ---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
----Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili 
-bir problem giderildi.
+---Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili bir problem giderildi.
 
 #################################################################################
 
@@ -43,8 +42,7 @@ Kullanıcı: root
 ve bağlan diyoruz.
 
 2-)İndirmiş olduğunuz dosyayı filezilla programı ile /sbin klasörünün içine atıyoruz.
-2a-)Yeni sürüm dosyaları /var/log/dhcplogger klasörüne kaydediyor. Sorun olmaması için /log klasörünün altına 
-/dhcplogger adlı bir klasör oluşturun.
+2a-)Yeni sürüm dosyaları /var/log/dhcplogger klasörüne kaydediyor. Sorun olmaması için /log klasörünün altına /dhcplogger adlı bir klasör oluşturun.
 
 3-)İlk ayarları yapmak için pfSense makinemize SSH ile bağlanmamız gerekiyor.
 3a-)pfSense makinemize bağlanmak için Putty programını kullanacağız.
@@ -66,16 +64,14 @@ ve ayarları kaydetmek için "e" diyoruz.
 
 5-)Windows tarafı ve dosya paylaşımı
 5a-)Windows bilgisayarımızda c: sürücümüze bir klasör oluşturup bunu paylaşıma açıyoruz.
-Önemli Nokta: Paylaşıma açtığınız klasöre eklediğiniz kullanıcı ile yukarıda ayarlara yazdığınız değerler 
-aynı olmalıdır.
+Önemli Nokta: Paylaşıma açtığınız klasöre eklediğiniz kullanıcı ile yukarıda ayarlara yazdığınız değerler aynı olmalıdır.
 
 ---PFSENSE MAKİNEYE SMBCLİENT KURULUMU---
 ################################################
 ---Eğer pfSense makinenizde samba 3.6 sürümü yüklü ise program sorunsuz çalışacaktır.
 ---1. Adımda bahsedilen işlemleri yapmadan önce 2. işlemi yapmayı deneyin eğer hata alırsanız aşağıdan devam edin. 
 ################################################
-1-)Öncelikle pfSense makinenizde aşağıdaki paketler var ise öncelikle pkg_delete kurulu-programın-adı komutu 
-ile kaldırınız.
+1-)Öncelikle pfSense makinenizde aşağıdaki paketler var ise öncelikle pkg_delete kurulu-programın-adı komutu ile kaldırınız.
 
 ---python 
 ---samba
