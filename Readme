@@ -1,13 +1,14 @@
 Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
 
-V 0.2.2 (Yeniden ayarlama gerekli (Yeniden ayarlar için: dhcplogger.2.2.py -d)):
+V 0.2.2: http://95.85.45.82/owncloud/public.php?service=files&t=87072a0db85b5541cccfe9bf5fdff5e4
+---Yeniden ayarlama gerekli (Yeniden ayarlar için: dhcplogger.2.2.py -d))
 ---İlk ayarlar yapılpıldıktan sonra otomatik olarak veri göndermeye çalışması durduruldu. İlk çalışmada artık sadece yeni
    ayarları kayıt ediyor.
 ---İlerleyen zamanlarda openSSL ile imzalama özelliği eklenecek bir ön hazırlık yapıldı. (Kurulumu tekrar gözden geçirin.)
 ---Dosya isimleri artık sürüm numarasına sahip çalıştırırken yazmayı ihmal etmeyin.
 
 
-V 0.2:
+V 0.2: http://95.85.45.82/owncloud/public.php?service=files&t=32ff9221a27181f18a9543fe9dab27f1
 ---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritma değiştirildi.
 ---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
 ---Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili bir problem giderildi.
@@ -33,7 +34,7 @@ lease 192.168.1.42 {
   ends 2 2013/12/17 23:31:03;
   ... şeklinde devam ediyor.
   
--İndirmek için: http://95.85.45.82/owncloud/public.php?service=files&t=c331f59f501a63712a163eef1b0242c7
+-İndirmek için: İndirme linkleri versiyon bilgilerinin yanındadır (Yukarıda).
 
 ---KURULUM---
 
