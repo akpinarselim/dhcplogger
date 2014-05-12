@@ -101,6 +101,7 @@ dhcp5651.write("Mac adresi")
 ### DOSYALARI GÖNDERMEK IÇIN AYARLAR ".CONF" DOSYASI ###
 ########################################################
 check=0
+first_run=True
 say=len(sys.argv)
 config_check=open("/sbin/dhcplogger.conf","a") ##Ilk acilis icin dosya olusturulur.
 config_check=open("/sbin/dhcplogger.conf").read()
@@ -109,6 +110,7 @@ if config_check == "":
     config_check=open("/sbin/dhcplogger.conf","a")
     config_check.write("0:192.168.1.1:log:root:toor:4")
     config_check.close()
+    first_run=False
 config_zero=open("/sbin/dhcplogger.conf").read() ##Ayar dosyasi parcalara ayrilir.
 deger=[]
 deger=config_zero.split(":")
@@ -122,6 +124,7 @@ print "#########################################################################
 print "#                                  Selim Akpinar                              #"
 print "#                              pfSense log kaydedici                          #"
 print "#                                    Surum 0.2                                #"
+print "#            Surum notlari www.github.com/akpinarselim/dhcplogger/            #"
 print "#-----------------------------------------------------------------------------#"
 print "#Varsayilan degerler:                                                         #"
 print "#---                                                                          #"
@@ -188,7 +191,7 @@ endyaz=0
 basyaz=0
 ethyaz=0
 deger2=0
-while x<y: ##Leases kisimlari
+while x<y and first_run: ##Leases kisimlari
     le_split=leases[x].split(" ")
     v=len(le_split)
     z=0
@@ -233,7 +236,10 @@ import os
 os.chdir(os.pardir)
 os.chdir('/var/log/dhcplogger')
 smb_com=('smbclient \\\\\\\\{0}\\\\{1} -U {2}%"{3}" -c "put dhcp5651_{4}_{5}.txt"').format(deger[1],deger[2],deger[3],deger[4],tarihdosya,saatdosya)
-os.system(smb_com)
+if first_run:
+	os.system(smb_com)
+else:
+	print "Ilk ayarlar başarıyla yazıldı."
 #---
 
 
