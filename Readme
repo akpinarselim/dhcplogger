@@ -1,5 +1,12 @@
 Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
 
+V 0.2.2 (Yeniden ayarlama gerekli (Yeniden ayarlar için: dhcplogger.2.2.py -d)):
+---İlk ayarlar yapılpıldıktan sonra otomatik olarak veri göndermeye çalışması durduruldu. İlk çalışmada artık sadece yeni
+   ayarları kayıt ediyor.
+---İlerleyen zamanlarda openSSL ile imzalama özelliği eklenecek bir ön hazırlık yapıldı. (Kurulumu tekrar gözden geçirin.)
+---Dosya isimleri artık sürüm numarasına sahip çalıştırırken yazmayı ihmal etmeyin.
+
+
 V 0.2:
 ---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritma değiştirildi.
 ---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
@@ -59,6 +66,7 @@ Klasör: Hedef makinedeki paylaşılan klasörün adı
 Kullanıcı: Hedef makinedeki kullanıcı adı
 Şifre: Kullanıcının şifresi
 Saat: Kaç saatte bir kayıt yenilemesini istiyorsanız.
+Kayıt şekli: Hangi yöntem ile kayıt alacaksınız: 1 veya 2 (openSSL seçeneği aktif olmadığı için şimdilik sadece 1'i seçebilirsiniz.)
 ve ayarları kaydetmek için "e" diyoruz.
 (Sonradan ayarları değiştirmek isterseniz:"python /sbin/dhcplogger.py -d" şeklinde yazmanız yeterli)
 
