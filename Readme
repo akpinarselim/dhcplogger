@@ -1,6 +1,6 @@
 Kurulumda bazı değişiklikler olmuştur. Lütfen dikkatlice okuyunuz.
 
-V 0.2.2: http://95.85.45.82/owncloud/public.php?service=files&t=87072a0db85b5541cccfe9bf5fdff5e4
+V 0.2.2: https://drive.google.com/file/d/0BxAaf0vk_YTfemxJY3l4dXBfQ3c/edit?usp=sharing
 ---Yeniden ayarlama gerekli (Yeniden ayarlar için: dhcplogger.2.2.py -d))
 ---İlk ayarlar yapılpıldıktan sonra otomatik olarak veri göndermeye çalışması durduruldu. İlk çalışmada artık sadece yeni
    ayarları kayıt ediyor.
@@ -8,7 +8,7 @@ V 0.2.2: http://95.85.45.82/owncloud/public.php?service=files&t=87072a0db85b5541
 ---Dosya isimleri artık sürüm numarasına sahip çalıştırırken yazmayı ihmal etmeyin.
 
 
-V 0.2: http://95.85.45.82/owncloud/public.php?service=files&t=32ff9221a27181f18a9543fe9dab27f1
+V 0.2: https://drive.google.com/file/d/0BxAaf0vk_YTfNUNFYmNzQ1FWc00/edit?usp=sharing
 ---Hataları gidermek için leases dosyasını ayıklarken kullanılan algoritma değiştirildi.
 ---Programa saat fonksiyonu eklendi. (Belli aralıklarla kayıt alınması için)
 ---Konsoldan çalıştığında farklı cron programı ile otomatik olarak çalıştığı zaman kayıt yerleri ile ilgili bir problem giderildi.
